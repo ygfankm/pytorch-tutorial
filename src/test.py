@@ -6,7 +6,7 @@ import torchvision
 from PIL import Image
 from torch import nn
 
-image_path = "../imgs/airplane.png"
+image_path = "E:\\360云盘\\MyPython-Git\\pytorch-tutorial\\imgs\\airplane.png"
 image = Image.open(image_path)
 print(image)
 image = image.convert('RGB')
@@ -35,7 +35,7 @@ class Tudui(nn.Module):
         x = self.model(x)
         return x
 
-model = torch.load("tudui_29_gpu.pth", map_location=torch.device('cpu'))
+model = torch.load("E:\\360云盘\\MyPython-Git\\pytorch-tutorial\\src\\tudui_29_gpu.pth", weights_only=False, map_location=torch.device('cpu'))
 print(model)
 image = torch.reshape(image, (1, 3, 32, 32))
 model.eval()
